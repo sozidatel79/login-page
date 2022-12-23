@@ -20,7 +20,7 @@ Apache
 
 DB
 --------------------------------------
-DB name: login
-Table name: users
+1. DB name: login
+2. Table name: users
 
 ![23-12-2022 20-58-59](https://user-images.githubusercontent.com/3818335/209394785-b93323a1-2d25-4556-8a5f-2af2a327b9b4.png)
