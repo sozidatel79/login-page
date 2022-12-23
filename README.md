@@ -17,3 +17,10 @@ You should change the path by your needs
 Apache
 --------------------------------------
 1.Configure you virtual host run content from /public folder, or put the content of backend folder to place you preffer.
+
+DB
+--------------------------------------
+DB name: login
+Table name: users
+
+![23-12-2022 20-58-59](https://user-images.githubusercontent.com/3818335/209394785-b93323a1-2d25-4556-8a5f-2af2a327b9b4.png)
