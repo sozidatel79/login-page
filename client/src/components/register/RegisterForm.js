@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './register.css';
-import axios from "axios";
+import Request from "../api/api";
 
 
 const LoginForm = () => {
@@ -11,23 +11,13 @@ const LoginForm = () => {
 
     const registerHandler = async e => {
         e.preventDefault();
-        const headers = {
-            'Content-Type': 'text/plain'
-        };
         if(password !== repeatPassword) {
             alert('Passwords do not match!');
             return false;
         }
-        await axios.post(
-            'http://webbox.live/register',
-            {
-                email: email,
-                password: password
-            },
-            {headers}
-        ).then(response => {
+
+        Request.post('/register', { email: email, password: password }).then(response => {
             if(response.data){
-                console.log(response.data)
                 alert('Your account was successfully created')
             }
         }).catch(error => {
