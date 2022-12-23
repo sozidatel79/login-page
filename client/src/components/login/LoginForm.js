@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './login.css';
 import axios from "axios";
+import Request from "../api/api";
 
 const LoginForm = ({setCurrentUser}) => {
 
@@ -9,26 +10,15 @@ const LoginForm = ({setCurrentUser}) => {
 
     const loginHandler = async e => {
         e.preventDefault();
-        const headers = {
-            'Content-Type': 'text/plain'
-        };
-        await axios.post(
-            'http://webbox.live/login',
-            {
-                email: email,
-                password: password
-            },
-            {headers}
-        ).then(response => {
-            const loggedInUser = response.data
-            if(loggedInUser){
-                setCurrentUser(loggedInUser)
+        Request.post('/login', { email: email, password: password }).then(response => {
+            if(response.data){
+                setCurrentUser(response.data)
             }else {
                 alert('Wrong username or password')
             }
         }).catch(error => {
-              console.log(error);
-          }
+                console.log(error);
+            }
         )
     }
 
