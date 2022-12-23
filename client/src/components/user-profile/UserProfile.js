@@ -1,10 +1,8 @@
 import React, {useState, useRef} from 'react';
 import './UserProfile.css';
-import axios from "axios";
+import Request from "../api/api";
 
 const UserProfile = ({currentUser, setCurrentUser, loggedIn, setLoggedIn}) =>  {
-
-    const ref = useRef(null);
 
     const[name, setName] = useState('');
     const[lastName, setLastName] = useState('');
@@ -20,23 +18,18 @@ const UserProfile = ({currentUser, setCurrentUser, loggedIn, setLoggedIn}) =>  {
 
     const updateHandler = async e => {
         e.preventDefault();
-        const headers = {
-            'Content-Type': 'text/plain'
-        };
-        await axios.post(
-            'http://webbox.live/user/update',
-            {
-                id: currentUser.id,
-                name: name,
-                last_name: lastName,
-                address: address,
-                gender: gender,
-                phone_number: phoneNumber,
-            },
-            {headers}
-        ).then(response => {
-            if (response.data) {
-                setCurrentUser(response.data);
+        const data = {
+            id: currentUser.id,
+            name: name,
+            last_name: lastName,
+            address: address,
+            gender: gender,
+            phone_number: phoneNumber,
+        }
+        Request.post('/user/update', data).then(response => {
+            if(response.data){
+                setCurrentUser(response.data)
+                alert('Your profile successfully updated')
             }
         }).catch(error => {
                 console.log(error);
