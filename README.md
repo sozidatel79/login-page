@@ -12,7 +12,7 @@ In order to install Client
 !!! NOTES !!!
 --------------------------------------
 All requests on client pointed to http://webbox.live domain
-You should change the path by your needs
+Change the base url by you needs in client/src/components/api/api.jsx file
 
 Apache
 --------------------------------------
