@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'http://webbox.net',
+    baseURL: 'http://webbox.live',
     withCredentials: false,
     headers: {
         'Content-Type': 'text/plain',
