@@ -16,7 +16,7 @@ You should change the path by your needs
 
 Apache
 --------------------------------------
-1.Configure you virtual host run content from root folder(.htaccess will do the rest), or put the content of backend folder to place you preffer.
+1.Configure you virtual host run content from root folder(.htaccess will do the rest).
 
 DB
 --------------------------------------
