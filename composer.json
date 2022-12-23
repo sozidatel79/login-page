@@ -1,0 +1,20 @@
+{
+    "name": "rotsh/websrv.online",
+    "description": "users online",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Anton Rotshtein",
+            "email": "rotshtein.anton@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+      "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

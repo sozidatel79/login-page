@@ -1,0 +1,23 @@
+html, body {
+    background: #f2f2f2;
+}
+
+div.front-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+}
+
+div.component-separator {
+    font-size: 70px;
+    color: mediumpurple;
+}
+
+@media only screen and (max-width: 600px) {
+    div.front-page  {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
