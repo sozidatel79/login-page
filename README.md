@@ -24,6 +24,10 @@ Apache
 1. Configure you virtual host run content from root folder(.htaccess will do the rest).
 2. Be shure apache rewrite_mode is enabled and rewrite for folder ( /var/www ) is allowed in apache config file.
 
+PHP
+--------------------------------------
+1. Be shure modules pdo_mysql AND pdo_oci enabled in PHP config flie
+
 DB
 --------------------------------------
 1. DB name: login
