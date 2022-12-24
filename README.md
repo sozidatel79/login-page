@@ -8,10 +8,11 @@ Login App =>  [Live Demo](http://webbox.live:3000/)
 In order to install Client
 --------------------------------------
 1. Be sure node.js is installed
-2. Go to the client folder in console
-3. Run "npm i" in command line
-4. Run "npm start"
-5. The app will be available on PORT: 3000
+2. Be sure npm is installed
+3. Go to the client folder in console
+4. Run "npm i" in command line
+5. Run "npm start"
+6. The app will be available on PORT: 3000
 
 !!! NOTES !!!
 --------------------------------------
