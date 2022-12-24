@@ -56,6 +56,7 @@ const LoginForm = () => {
 
                         <div className="wrap-input100 validate-input" data-validate="Enter password">
                             <input
+                                minLength='4'
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder='password'
                                 className="input100"
