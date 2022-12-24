@@ -2,7 +2,7 @@ import React, {useState, useRef} from 'react';
 import './UserProfile.css';
 import Request from "../api/api";
 
-const UserProfile = ({currentUser, setCurrentUser, loggedIn, setLoggedIn}) =>  {
+const UserProfile = ({currentUser, setCurrentUser}) =>  {
 
     const[name, setName] = useState('');
     const[lastName, setLastName] = useState('');
@@ -13,7 +13,6 @@ const UserProfile = ({currentUser, setCurrentUser, loggedIn, setLoggedIn}) =>  {
     const logoutHandler = (user) => {
         localStorage.removeItem('currentUser');
         setCurrentUser(null)
-        setLoggedIn(false)
     }
 
     const updateHandler = async e => {
