@@ -21,7 +21,8 @@ In order to install Client
 
 Apache
 --------------------------------------
-1.Configure you virtual host run content from root folder(.htaccess will do the rest).
+1. Configure you virtual host run content from root folder(.htaccess will do the rest).
+2. Be shure apache rewrite_mode is enabled and rewrite for folder ( /var/www ) is allowed in apache config file.
 
 DB
 --------------------------------------
