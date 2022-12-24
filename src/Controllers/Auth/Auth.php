@@ -13,7 +13,6 @@ class Auth
     public function login() {
         $body = file_get_contents('php://input');
         $user = AuthService::login(JsonHelper::jsonToArray($body));
-        unset($user['password']);
         echo json_encode($user);
     }
 
