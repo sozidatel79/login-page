@@ -22,7 +22,7 @@ API.interceptors.response.use(
 class Request {
 
     get = async (url) => {
-        await API.get(url)
+        return await API.get(url)
     }
 
     post = async (url, data) => {
