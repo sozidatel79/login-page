@@ -17,7 +17,9 @@ const LoginForm = () => {
         }
 
         Request.post('/register', { email: email, password: password }).then(response => {
-            if(response.data){
+            if(response.data.status === 'error'){
+                alert(response.data.message)
+            } else {
                 alert('Your account was successfully created')
             }
         }).catch(error => {

@@ -86,6 +86,13 @@ class DbUserRepository implements UserRepositoryInterface {
     {
         $sql = "INSERT INTO users (email, password, ip) values(?,?,?)";
         try {
+            $user_exist =  $this->findByEmail($data['email']);
+            if($user_exist) {
+                return [
+                    'status' => 'error',
+                    'message' => 'User with this Email already exist'
+                ];
+            }
             $statement = $this->db->prepare($sql);
             $statement->execute([
                 $data['email'],
@@ -112,6 +119,25 @@ class DbUserRepository implements UserRepositoryInterface {
             $query->execute([
                 $email,
                 $this->hashPassword($password),
+            ]);
+            return  $query->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            return null;
+        }
+    }
+
+    /**
+     * @param string $email
+     * @return mixed|null
+     */
+    public function findByEmail(string $email)
+    {
+        $sql = 'SELECT * FROM users WHERE email = ?';
+
+        try {
+            $query = $this->db->prepare($sql);
+            $query->execute([
+                $email
             ]);
             return  $query->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
