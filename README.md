@@ -1,7 +1,6 @@
 React / Custom API | Login Application
 -------------------
 
---------------------------------------
 Login App =>  [Live Demo](http://webbox.live:3000/)
 --------------------------------------
 
